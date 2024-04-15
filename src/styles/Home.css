@@ -1,0 +1,28 @@
+.homeContainer {
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.color-title-div{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+}
+
+.input-box-search{
+    border: 2px solid rgb(0, 0, 0);
+    height: 20px;
+    border-radius: 4px;
+    height: 30px;
+    width: 200px;
+}
+.progress-bar-div{
+    width: 50%;
+    display: flex;
+    margin-top: 20px;
+    border: 1px solid black;
+}
