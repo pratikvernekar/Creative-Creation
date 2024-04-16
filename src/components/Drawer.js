@@ -38,12 +38,12 @@ export default function Drawer({ closeDrawer, isDrawerOpen, colors, setData }) {
             <input name='title'
             value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                placeholder='This is a title!' className='input-box' />
+                placeholder='Enter text' className='input-box' />
             <p className='title'>subtitle</p>
             <input name='title'
             value={subTitle}
                 onChange={(e) => setSubTitle(e.target.value)}
-                placeholder='This is a subtitle!'
+                placeholder='Enter text'
                 className='input-box' />
             <p className='title'>background color</p>
             {colors && colors.map((color, index) => {

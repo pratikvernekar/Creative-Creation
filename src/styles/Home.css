@@ -14,7 +14,7 @@
 .color-title-div {
     display: flex;
     justify-content: space-between;
-    width: 37vw;
+    width: 37.2vw;
     align-items: center;
     font-weight: bold;
     font-size: 1.4rem;
@@ -34,6 +34,9 @@
     border-radius: 4px;
     height: 30px;
     width: 200px;
+    font-weight: bold;
+    padding: 0px 3px;
+    box-sizing: border-box;
 }
 
 .progress-bar-div {
