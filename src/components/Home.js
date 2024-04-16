@@ -10,11 +10,12 @@ export default function Home({ openDrawer, colors, isDrawerOpen, data, setData }
 
     useEffect(() => {
         setFilterData(data)
+        setSelectedColor('')
     }, [data])
 
     useEffect(() => {
         onFilterData();
-    }, [text,selectedColor]);
+    }, [text, selectedColor]);
 
 
     function enableAddBtn() {
@@ -24,15 +25,23 @@ export default function Home({ openDrawer, colors, isDrawerOpen, data, setData }
         return isDrawerOpen
     }
 
-    function onFilterData() {
-        if(selectedColor){
-            const res = data.filter(e => e.color === selectedColor);
-             setFilterData(res)
+    function onFilterData(color) {
+        if (selectedColor === color) {
+            setSelectedColor('')
         }
-        if(text){
-            const res = data.filter(e => e.title.includes(text));
-            setFilterData(res)
+
+        let filteredData = data;
+        const searchText = text.toLowerCase();
+
+        if (selectedColor) {
+            filteredData = filteredData.filter(e => e.color === selectedColor);
         }
+
+        filteredData = filteredData.filter(item =>
+            item.title.toLowerCase().includes(searchText) ||
+            (item.subTitle && item.subTitle.toLowerCase().includes(searchText))
+        );
+        setFilterData(filteredData);
     }
     return (
         <div className='homeContainer'>
@@ -42,12 +51,12 @@ export default function Home({ openDrawer, colors, isDrawerOpen, data, setData }
                 <span>color</span>
                 <span>title / subtitle:</span>
             </div>
-            <div className='color-title-div'>
+            <div className='color-input-div'>
                 <div>{colors && colors.map((color, index) => {
                     return <button key={index}
                         onClick={() => {
                             setSelectedColor(color)
-                            onFilterData()
+                            onFilterData(color)
                         }
                         }
                         style={{
@@ -69,7 +78,7 @@ export default function Home({ openDrawer, colors, isDrawerOpen, data, setData }
                     className='input-box-search' />
             </div>
             <div className='progress-bar-div'>
-                <ProgressBar value={data.length} maxValue={5} />  <span>{data.length} / 5 Creatives</span>
+                <ProgressBar value={data.length} maxValue={5} />  <div className='creatives'>{data.length} / 5 Creatives</div>
             </div>
 
 

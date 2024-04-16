@@ -1,28 +1,52 @@
 .homeContainer {
     height: 100vh;
     width: 100vw;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
     overflow-y: scroll;
+    font-size: 1.5rem;
 }
 
-.color-title-div{
+.header-text {
+    font-size: 2rem;
+
+}
+
+.color-title-div {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 37vw;
     align-items: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 20px;
 }
 
-.input-box-search{
+.color-input-div {
+    display: flex;
+    justify-content: space-between;
+    width: 40.7vw;
+    margin-top: 10px;
+}
+
+.input-box-search {
     border: 2px solid rgb(0, 0, 0);
     height: 20px;
     border-radius: 4px;
     height: 30px;
     width: 200px;
 }
-.progress-bar-div{
-    width: 50%;
+
+.progress-bar-div {
+    width: 50vw;
     display: flex;
     margin-top: 20px;
-    border: 1px solid black;
+    font-weight: bold;
+    align-items: baseline;
+}
+
+.creatives {
+    margin-left: 20px;
+    width: 150px;
+    font-size: 1.1rem;
 }

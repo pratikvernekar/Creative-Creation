@@ -8,8 +8,11 @@ function App() {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [data, setData] = useState([]);
-  const [colors, setIsColors] = useState(false);
+  const [colors, setIsColors] = useState(false)
+  const [loading, setloading] = useState(false)
+    ;
   useEffect(() => {
+    setloading(true)
     fetch('https://random-flat-colors.vercel.app/api/random?count=5')
       .then(response => {
         if (!response.ok) {
@@ -19,9 +22,13 @@ function App() {
       })
       .then(data => {
         setIsColors(data.colors)
+        setTimeout(() => {
+          setloading(false)
+        }, 300);
       })
       .catch(error => {
         console.error(error);
+        setloading(false)
       });
   }, [])
 
@@ -33,10 +40,14 @@ function App() {
     setIsDrawerOpen(false);
   };
 
+  if (loading) {
+    return (<div className='loader-container'><div className="loader"></div></div>)
+  }
+
   return (
     <div className='app-main'>
-      <Home openDrawer={openDrawer} colors={colors} isDrawerOpen={isDrawerOpen} setData={setData} data={data}/>
-      <Drawer closeDrawer={closeDrawer} isDrawerOpen={isDrawerOpen} colors={colors} setData={setData}/>
+      <Home openDrawer={openDrawer} colors={colors} isDrawerOpen={isDrawerOpen} setData={setData} data={data} />
+      <Drawer closeDrawer={closeDrawer} isDrawerOpen={isDrawerOpen} colors={colors} setData={setData} />
     </div>
   );
 }

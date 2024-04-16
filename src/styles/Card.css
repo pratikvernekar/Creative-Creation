@@ -1,11 +1,11 @@
 .card {
-    width: 50%; 
+    width: 40vw;
     margin-top: 20px; 
     border: 1px solid #000000; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden; 
-    padding: 20px; 
+    padding: 20px 50px; 
     box-sizing: border-box; 
 }
 
@@ -16,5 +16,6 @@
 
 .card-content {
     color: #000000;
-    font-size: 16px; 
+    font-size: 1.1rem; 
+    font-weight: bold;
 }

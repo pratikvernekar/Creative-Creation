@@ -17,7 +17,13 @@ export default function Drawer({ closeDrawer, isDrawerOpen, colors, setData }) {
             subTitle: subTitle
         }
         setData(prev => [...prev, obj])
+        setSelectedColor('')
+        setSubTitle('')
+        setTitle('')
+        closeDrawer()
+    }
 
+    function close(){
         setSelectedColor('')
         setSubTitle('')
         setTitle('')
@@ -26,7 +32,7 @@ export default function Drawer({ closeDrawer, isDrawerOpen, colors, setData }) {
     return (
         <div className={`drawer-container ${!isDrawerOpen ? 'drawer-close' : 'drawer-container'}`}>
             <div className='drawer-header'><p className='header-text'>Creative Creation</p>
-                <p className='cross' onClick={closeDrawer}>X</p>
+                <p className='cross' onClick={close}>X</p>
             </div>
             <p className='title'>title</p>
             <input name='title'
