@@ -58,7 +58,7 @@ export default function Drawer({ closeDrawer, isDrawerOpen, colors, setData }) {
                     }}></button>
             })}
             <br />
-            <button onClick={submit} className='btn'
+            <button onClick={submit} className='btn btn-done'
                 disabled={!enableDoneBtn()}
             >Done</button>
         </div>

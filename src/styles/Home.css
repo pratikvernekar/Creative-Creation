@@ -9,7 +9,6 @@
 
 .header-text {
     font-size: 2rem;
-
 }
 
 .color-title-div {
@@ -42,11 +41,24 @@
     display: flex;
     margin-top: 20px;
     font-weight: bold;
-    align-items: baseline;
+    align-items: center;
 }
 
 .creatives {
     margin-left: 20px;
     width: 150px;
     font-size: 1.1rem;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    margin: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
 }
